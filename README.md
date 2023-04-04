@@ -1,8 +1,5 @@
 # YouTube chapter creator helper
-<img src="Images/header.jpg" width="100%" align="center"/>
-
-До ■ После
-
+<img src="Images/Header.jpg" width="100%" align="center"/>
 ## Описание
 В строке 
 ``
