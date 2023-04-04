@@ -11,9 +11,10 @@ def convert_from(link):
 
 
 try:
-    print('Нажми: Копировать URL видео с привязкой по времени и нажми Enter')
-    x = input()
-    convert_from(x)
+    while True:
+        print('Нажми: Копировать URL видео с привязкой по времени и нажми Enter')
+        x = input()
+        convert_from(x)
 except Exception as e:
     print("Произошла ошибка: ", e)
     input("Нажмите Enter чтобы выйти")
