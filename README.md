@@ -1,6 +1,8 @@
 # YouTube timecode helper
 <img src="https://i.imgur.com/k4s7.png" width="80%" align="center"/>
 
+[![Пример](Images/sjvX8D26iu.jpg)](https://youtu.be/XsqoKeLr3eY)
+
 ## Описание
 В строке 
 ``
