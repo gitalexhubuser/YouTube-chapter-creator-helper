@@ -1,6 +1,5 @@
 # YouTube chapter creator helper
-<img src="Images/sjvX8D26iu.jpg" width="40%" align="center"/>
-<img src="Images/xP3OohP6hl.jpg" width="40%" align="center"/>
+<img src="Images/header.jpg" width="100%" align="center"/>
 
 До ■ После
 
@@ -17,11 +16,11 @@ https://youtu.be/5lwH4APNOuo?t=216
 
 Решил сделать свой проект, чтоб более быстро и более удобно нарезать видео на главы.
 
-<img src="Images/61c32b51b6c49d47a4ef7b14_YouTube-Chapters-1.png" width="20%" align="center"/>
+<img src="Images/61c32b51b6c49d47a4ef7b14_YouTube-Chapters-1.png" width="30%" align="center"/>
 
 Проверить что всё верно можно [тут](https://calculat.io/ru/date/seconds/370)
 
-<img src="Images/woGD4aT6xQ.jpg" width="10%" align="center"/>
+<img src="Images/woGD4aT6xQ.jpg" width="20%" align="center"/>
 
 
 ## Использование
