@@ -1,6 +1,6 @@
 # YouTube timecode helper
-<img src="Images/sjvX8D26iu.jpg" width="40%" align="center"/>
-<img src="Images/sjvX8D26iu.jpg" width="40%" align="center"/>
+<img src="Images/sjvX8D26iu.jpg" width="40%" align="left"/>
+<img src="Images/sjvX8D26iu.jpg" width="40%" align="right"/>
 
 До ■ После
 
