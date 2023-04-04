@@ -1,5 +1,6 @@
 # YouTube chapter creator helper
 <img src="Images/Header.jpg" width="100%" align="center"/>
+
 ## Описание
 В строке 
 ``
