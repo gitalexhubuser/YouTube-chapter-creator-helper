@@ -21,6 +21,7 @@ def convert_file():
 
     # открываем файл для записи
     with open('description.txt', 'w', encoding='1251', errors='ignore') as f:
+        # f.write("00:00:00 - \r\n") # вставить 00 00 если нету
         f.write(text)
 
 
