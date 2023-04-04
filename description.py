@@ -2,7 +2,7 @@
 
 def convert_file():
 
-    with open('description.txt', 'r', encoding='utf-8', errors='replace') as f:
+    with open('description.txt', 'r', encoding='1251', errors='ignore') as f:
         text = f.read()
 
     matches = re.findall(r'https://youtu.be/(\w+)\?t=(\d+)', text)
@@ -20,7 +20,7 @@ def convert_file():
         pyperclip.copy(text)
 
     # открываем файл для записи
-    with open('description.txt', 'w', encoding='utf-8', errors='replace') as f:
+    with open('description.txt', 'w', encoding='1251', errors='ignore') as f:
         f.write(text)
 
 
