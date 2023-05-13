@@ -34,4 +34,4 @@
 ## Ссылки
 | Описание | Ссылка |
 | ------ | ------ |
-Репо: | https://github.com/gitalexhubuser/YouTube-timecode-helper
+Репо: | https://github.com/gitalexhubuser/YouTube-chapter-creator-helper
