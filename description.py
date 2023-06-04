@@ -19,7 +19,7 @@ with open("description.txt", "r", encoding="utf-8") as file:
     for i in range(len(lst)):
         if '?t=' in lst[i]:
             time = convert_time(lst[i])
-            lst[i] = re.sub(r'\?t=\d+', f'?t={time}', lst[i])
+            lst[i] = re.sub(r'\?t=\d+', f'?t={time}'+' -', lst[i])
 
     with open("description.txt", "w", encoding="utf-8") as file:
         file.writelines(lst)
