@@ -1,40 +1,38 @@
-﻿import re, os, pyperclip
+﻿import re
+from datetime import datetime, timedelta
 
-path = os.path.abspath(os.curdir) # path = os.getcwd()
-print("path ", path)
+def convert_time(link):
+    time_str = re.search(r'\?t=(\d+)', link).group(1)
+    # time_str = re.search(r'\s', link).group(1)
+    # print(time_str)
 
-input_file = path + "\\description.txt"
-output_file = path + "\\description.txt"
+    time_sec = int(time_str)
+    delta = timedelta(seconds=time_sec)
+    return (datetime.min + delta).time()
 
-def convert_file():
-    # .*? - любое количество символов (включая нулевое), соответствующих любому символу, кроме перевода строки, нежадным способом (т.е. остановится на первом вхождении следующего шаблона)
-    with open(input_file, 'r', encoding='utf8', errors='ignore') as f:
-        text = f.read()
+with open("description.txt", "r", encoding="utf-8") as file:
 
-    matches = re.findall(r'https://youtu.be/(.*?)\?t=(\d+)', text)
-    # print("matches ", matches)
+    lst = file.readlines()
+    # print(links)
+    # ['00:00:00 - О чём ролик\n', 'https://youtu.be/0K-q7MXF6B8?t=12 проблема с Удотом\n', 'https://youtu.be/0K-q7MXF6B8?t=53 дистанция холиауры\n', 'https://youtu.be/0K-q7MXF6B8?t=77 решение проблемы через адон\n', 'https://youtu.be/0K-q7MXF6B8?t=105 решение вопроса через ЕР\n', 'https://youtu.be/0K-q7MXF6B8?t=129 группа вк\n', 'https://youtu.be/0K-q7MXF6B8?t=130 группа вк\n', 'https://youtu.be/0K-q7MXF6B8?t=148 розыгрыш на 100 человек\n']
 
-    for match in matches:
-        video_id = match[0] # print("video_id ", video_id)
-        seconds = int(match[1]) # print("seconds ", seconds)
-        hours, seconds = divmod(seconds, 3600)
-        minutes, seconds = divmod(seconds, 60)
-        hr_tens, hr_ones = divmod(hours, 10)
-        min_tens, min_ones = divmod(minutes, 10)
-        sec_tens, sec_ones = divmod(seconds, 10)
-        time_str = f"{hr_tens}{hr_ones}:{min_tens}{min_ones}:{sec_tens}{sec_ones}"
+    for i in range(len(lst)):
+        if '?t=' in lst[i]:
+            time = convert_time(lst[i])
+            lst[i] = re.sub(r'\?t=\d+', f'?t={time}', lst[i])
 
-        replace_str = f"{time_str} -"
-        text = text.replace(f"https://youtu.be/{video_id}?t={match[1]}", replace_str)
-        # pyperclip.copy(text)
+    with open("description.txt", "w", encoding="utf-8") as file:
+        file.writelines(lst)
 
-    with open(output_file, 'w', encoding='utf8', errors='ignore') as f:
-        # f.write("00:00:00 - \r\n") # вставить 00 00 если нету
-        f.write(text)
+    # ['00:00:00 - О чём ролик\n', 'https://youtu.be/0K-q7MXF6B8?t=00:00:12 проблема с Удотом\n', 'https://youtu.be/0K-q7MXF6B8?t=00:00:53 дистанция холиауры\n', 'https://youtu.be/0K-q7MXF6B8?t=00:01:17 решение проблемы через адон\n', 'https://youtu.be/0K-q7MXF6B8?t=00:01:45 решение вопроса через ЕР\n', 'https://youtu.be/0K-q7MXF6B8?t=00:02:09 группа вк\n', 'https://youtu.be/0K-q7MXF6B8?t=00:02:10 группа вк\n', 'https://youtu.be/0K-q7MXF6B8?t=00:02:28 розыгрыш на 100 человек\n']
 
 
-try:
-    convert_file()
-except Exception as e:
-    print("Произошла ошибка: ", e)
-    input("Нажмите Enter чтобы выйти")
+
+with open('description.txt', 'r') as f:
+    data = f.read()
+
+new_data = re.sub(r'https://youtu\.be/.*\?t=', '', data)
+
+with open('description.txt', 'w') as f:
+    f.write(new_data)
+        
