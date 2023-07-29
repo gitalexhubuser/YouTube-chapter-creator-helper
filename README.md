@@ -39,4 +39,4 @@
 # Ссылки
 | Описание | Ссылка |
 | ------ | ------ |
-Репо: | [https://github.com/gitalexhubuser/YouTube-chapter-creator-helper](https://github.com/gitalexhubuser/YouTube-chapter-creator-helper)
+Репо: | [github.com/gitalexhubuser/YouTube-chapter-creator-helper](https://github.com/gitalexhubuser/YouTube-chapter-creator-helper)
